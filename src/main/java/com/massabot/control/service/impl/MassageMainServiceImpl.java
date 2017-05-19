@@ -98,6 +98,18 @@ public class MassageMainServiceImpl implements MassageMainService {
 	}
 
 	/* (non-Javadoc)
+	 * @see com.massabot.control.service.MassageMainService#getFingerTemp()
+	 */
+	@Override
+	public Integer getFingerTemp() {
+		try {
+			return mainHandler.retrieveFingerTemp();
+		} catch (Exception e) {
+			throw new MassaBotException("查询手指温度时出现错误时出现错误", e);
+		}
+	}
+
+	/* (non-Javadoc)
 	 * @see com.massabot.control.service.MassageMainService#setFingerTemp(int)
 	 */
 	public String setFingerTemp(int temp) {

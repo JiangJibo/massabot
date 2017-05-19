@@ -17,21 +17,21 @@ import java.util.Map;
  */
 public enum VoiceWord {
 
-	UPPER("上", "upper"),
+	UPPER("上", "G1 A45B31C34X104Y87Z2000,"),
 
-	LOWER("下", "lower"),
+	LOWER("下", "G1 A60B44C36X136Y108Z2000,"),
 
-	LEFT("左", "left"),
+	LEFT("左", "G1 A73B53C40X163Y128Z2000,"),
 
-	RIGHT("右", "right"),
+	RIGHT("右", "G1 A92B69C53X211Y168Z2000,"),
 
-	FASTER("快", "faster"),
+	FASTER("快", "G1 A95B79C63X230Y196Z2000,"),
 
-	SLOWER("慢", "slower"),
+	SLOWER("慢", "G1 A106B106C67X271Y239Z2000,"),
 
-	LIGHTER("轻", "lighter"),
+	LIGHTER("轻", "G1 A125B134C99X271Y248Z2000,"),
 
-	POWER("重", "power");
+	POWER("重", "G1 A21B177C122X191Y263Z2000,");
 
 	public String label;
 	public String code;

@@ -6,11 +6,13 @@ package com.massabot.control.handler;
 
 import java.io.Serializable;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import com.massabot.control.constant.MassageServiceType;
 import com.massabot.control.constant.StateNodes;
+import com.massabot.control.util.GcodeSender;
 
 /**
  * 按摩状态
@@ -25,6 +27,9 @@ public class MassageStateHandler {
 
 	private volatile int currentLine;
 	private volatile int totalLines;
+
+	@Autowired
+	private GcodeSender gcodeSender;
 
 	private volatile MassageServiceState msState = new MassageServiceState();
 

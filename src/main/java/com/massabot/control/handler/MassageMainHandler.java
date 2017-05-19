@@ -142,19 +142,30 @@ public class MassageMainHandler {
 	}
 
 	/**
+	 * 查询手指当前温度
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public Integer retrieveFingerTemp() throws Exception {
+		gcodeSender.sendGcode("I\r\n");
+		int temp = gcodeSender.getReturnTemp();
+		stateHandler.setFingerTemp(temp);
+		return temp;
+	}
+
+	/**
 	 * 设置手指温度
 	 * 
 	 * @param temp
 	 * @throws Exception
 	 */
-	// @Async
 	public void setFingerTemp(int temp) throws Exception {
 		// LOGGER.debug("当前线程名称为:[{}]", Thread.currentThread().getName());
 		stateHandler.setFingerTemp(temp);
 		gcodeSender.sendGcode("T" + temp + "\r\n");
 	}
 
-	// @Async
 	public void sendVoiceWord(String voiceWord) throws Exception {
 		gcodeSender.sendGcode(voiceWord);
 	}

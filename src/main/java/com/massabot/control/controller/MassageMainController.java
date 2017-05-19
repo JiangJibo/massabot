@@ -101,6 +101,16 @@ public class MassageMainController {
 	}
 
 	/**
+	 * 查询手指当前温度
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/fingertemp", method = RequestMethod.GET)
+	public Integer getFingerTemp() {
+		return mainService.getFingerTemp();
+	}
+
+	/**
 	 * 设置手指温度
 	 * 
 	 * @param temp

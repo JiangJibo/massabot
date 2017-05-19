@@ -45,6 +45,13 @@ public interface MassageMainService {
 	public String cancleSend();
 
 	/**
+	 * 查询手指当前温度
+	 * 
+	 * @return
+	 */
+	public Integer getFingerTemp();
+
+	/**
 	 * 设置手指温度
 	 * 
 	 * @param temp

@@ -244,6 +244,29 @@ public class GcodeSender {
 	}
 
 	/**
+	 * 查询手指当前温度
+	 * 
+	 * @return
+	 * @throws InterruptedException
+	 */
+	public Integer getReturnTemp() throws Exception {
+		SerialPortEventHolder eventHolder = null;
+		do {
+			if (queue == null) {
+				queue = backend.getConnection().getCallBack();
+			}
+			eventHolder = queue.take(); // 遵循FIFO原则,获取最后一个存入Queue的元素
+		} while (queue.size() > 0);
+
+		if (eventHolder.isRXCHAR()) {
+			String value = eventHolder.getRetString();
+			value = String.valueOf(value.charAt(1)) + String.valueOf(value.charAt(3));
+			return Integer.parseInt(value);
+		}
+		return -1;
+	}
+
+	/**
 	 * 暂停发送
 	 * 
 	 * @return

@@ -17,12 +17,12 @@ public interface MassaBotConstant {
 	/**
 	 * 手指最大温度
 	 */
-	public static final Integer FINGER_TEMP_MAX = 40;
+	public static final Integer FINGER_TEMP_MAX = 60;
 
 	/**
 	 * 手指最小温度
 	 */
-	public static final Integer FINGER_TEMP_MIN = 30;
+	public static final Integer FINGER_TEMP_MIN = 0;
 
 	/**
 	 * 示教文件存放目录

@@ -24,6 +24,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.handler.MappedInterceptor;
 import org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver;
 
+import com.massabot.config.mvc.interceptor.ConnectedInterceptor;
+import com.massabot.config.mvc.interceptor.RequestTimeInterceptor;
 import com.massabot.config.mvc.interceptor.ResetStateInterceptor;
 import com.massabot.config.root.exception.MassaBotExceptionResolver;
 
@@ -88,10 +90,10 @@ public class AppMvcConfig extends WebMvcConfigurerAdapter implements Application
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		/*ConnectedInterceptor conBOInt = new ConnectedInterceptor();
+		ConnectedInterceptor conBOInt = new ConnectedInterceptor();
 		registry.addInterceptor(new MappedInterceptor(conBOInt.getIncludePatterns(), conBOInt.getExcludePatterns(), conBOInt));
 		RequestTimeInterceptor timeInt = new RequestTimeInterceptor();
-		registry.addInterceptor(new MappedInterceptor(timeInt.getIncludePatterns(), timeInt.getExcludePatterns(), timeInt));*/
+		registry.addInterceptor(new MappedInterceptor(timeInt.getIncludePatterns(), timeInt.getExcludePatterns(), timeInt));
 		ResetStateInterceptor staInt = new ResetStateInterceptor();
 		registry.addInterceptor(new MappedInterceptor(staInt.getIncludePatterns(), staInt.getExcludePatterns(), staInt));
 	}
